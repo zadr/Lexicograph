@@ -12,12 +12,10 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	var showingSuggestions: Bool = false
 	var words: String[]
 	var viewedWords: String[]
-	var notificationObservers: AnyObject[]
 
 	init(nibName nibNameOrNil: String!, nibBundle nibBundleOrNil: NSBundle!) {
 		words = String[]()
 		viewedWords = String[]()
-		notificationObservers = AnyObject[]()
 
 		super.init(nibName: nibName, bundle: nibBundle)
 
