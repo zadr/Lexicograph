@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		92370C75193E48D00062B4D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370C74193E48D00062B4D9 /* AppDelegate.swift */; };
+		92370C77193E48D00062B4D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92370C76193E48D00062B4D9 /* Images.xcassets */; };
+		92370C8B193E49B70062B4D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370C8A193E49B70062B4D9 /* ViewController.swift */; };
+		92947FCD1634AEB700BDE83E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92947FCC1634AEB700BDE83E /* UIKit.framework */; };
+		92947FCF1634AEB700BDE83E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92947FCE1634AEB700BDE83E /* Foundation.framework */; };
+		92947FD11634AEB700BDE83E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92947FD01634AEB700BDE83E /* CoreGraphics.framework */; };
+		92947FD71634AEB700BDE83E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92947FD51634AEB700BDE83E /* InfoPlist.strings */; };
+		92947FD91634AEB700BDE83E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92947FD81634AEB700BDE83E /* main.m */; };
+		92947FDD1634AEB700BDE83E /* LXLexicographApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 92947FDC1634AEB700BDE83E /* LXLexicographApplication.m */; };
+		92947FDF1634AEB700BDE83E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 92947FDE1634AEB700BDE83E /* Default.png */; };
+		92947FE11634AEB700BDE83E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92947FE01634AEB700BDE83E /* Default@2x.png */; };
+		92947FE31634AEB700BDE83E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92947FE21634AEB700BDE83E /* Default-568h@2x.png */; };
+		92947FEB1634AF6A00BDE83E /* LXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92947FEA1634AF6A00BDE83E /* LXViewController.m */; };
+		92947FED16350FDD00BDE83E /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 92947FEC16350FDD00BDE83E /* Base.xcconfig */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92370C7D193E48D00062B4D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92947FBF1634AEB700BDE83E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92370C6F193E48D00062B4D9;
+			remoteInfo = "Lexicograph-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		92370C70193E48D00062B4D9 /* Lexicograph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexicograph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92370C73193E48D00062B4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92370C74193E48D00062B4D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		92370C76193E48D00062B4D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		92370C7C193E48D00062B4D9 /* Lexicograph-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lexicograph-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92370C8A193E49B70062B4D9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92947FC81634AEB700BDE83E /* Lexicograph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexicograph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92947FCC1634AEB700BDE83E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		92947FCE1634AEB700BDE83E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92947FD01634AEB700BDE83E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		92947FD41634AEB700BDE83E /* Lexicograph-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lexicograph-Info.plist"; sourceTree = "<group>"; };
+		92947FD61634AEB700BDE83E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92947FD81634AEB700BDE83E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92947FDA1634AEB700BDE83E /* Lexicograph-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lexicograph-Prefix.pch"; sourceTree = "<group>"; };
+		92947FDB1634AEB700BDE83E /* LXLexicographApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLexicographApplication.h; sourceTree = "<group>"; };
+		92947FDC1634AEB700BDE83E /* LXLexicographApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLexicographApplication.m; sourceTree = "<group>"; };
+		92947FDE1634AEB700BDE83E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		92947FE01634AEB700BDE83E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		92947FE21634AEB700BDE83E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		92947FE91634AF6A00BDE83E /* LXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXViewController.h; sourceTree = "<group>"; };
+		92947FEA1634AF6A00BDE83E /* LXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXViewController.m; sourceTree = "<group>"; };
+		92947FEC16350FDD00BDE83E /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		92947FEE1635146B00BDE83E /* Lexicograph.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Lexicograph.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92370C6D193E48D00062B4D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92370C79193E48D00062B4D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92947FC51634AEB700BDE83E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92947FCD1634AEB700BDE83E /* UIKit.framework in Frameworks */,
+				92947FCF1634AEB700BDE83E /* Foundation.framework in Frameworks */,
+				92947FD11634AEB700BDE83E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92370C71193E48D00062B4D9 /* Lexicograph-swift */ = {
+			isa = PBXGroup;
+			children = (
+				92370C8A193E49B70062B4D9 /* ViewController.swift */,
+				92370C74193E48D00062B4D9 /* AppDelegate.swift */,
+				92370C76193E48D00062B4D9 /* Images.xcassets */,
+			);
+			path = "Lexicograph-swift";
+			sourceTree = "<group>";
+		};
+		92370C72193E48D00062B4D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92370C73193E48D00062B4D9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = "Lexicograph-swift";
+			sourceTree = "<group>";
+		};
+		92947FBD1634AEB700BDE83E = {
+			isa = PBXGroup;
+			children = (
+				92947FD21634AEB700BDE83E /* Lexicograph-objc */,
+				92370C71193E48D00062B4D9 /* Lexicograph-swift */,
+				92947FD31634AEB700BDE83E /* Other */,
+				92947FCB1634AEB700BDE83E /* Frameworks */,
+				92947FC91634AEB700BDE83E /* Products */,
+				92370C72193E48D00062B4D9 /* Supporting Files */,
+			);
+			sourceTree = "<group>";
+		};
+		92947FC91634AEB700BDE83E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92947FC81634AEB700BDE83E /* Lexicograph.app */,
+				92370C70193E48D00062B4D9 /* Lexicograph.app */,
+				92370C7C193E48D00062B4D9 /* Lexicograph-swiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92947FCB1634AEB700BDE83E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92947FCC1634AEB700BDE83E /* UIKit.framework */,
+				92947FCE1634AEB700BDE83E /* Foundation.framework */,
+				92947FD01634AEB700BDE83E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92947FD21634AEB700BDE83E /* Lexicograph-objc */ = {
+			isa = PBXGroup;
+			children = (
+				92947FEA1634AF6A00BDE83E /* LXViewController.m */,
+				92947FE91634AF6A00BDE83E /* LXViewController.h */,
+				92947FDC1634AEB700BDE83E /* LXLexicographApplication.m */,
+				92947FDB1634AEB700BDE83E /* LXLexicographApplication.h */,
+			);
+			name = "Lexicograph-objc";
+			path = Lexicograph;
+			sourceTree = "<group>";
+		};
+		92947FD31634AEB700BDE83E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				92947FEE1635146B00BDE83E /* Lexicograph.entitlements */,
+				92947FEC16350FDD00BDE83E /* Base.xcconfig */,
+				92947FD41634AEB700BDE83E /* Lexicograph-Info.plist */,
+				92947FD51634AEB700BDE83E /* InfoPlist.strings */,
+				92947FD81634AEB700BDE83E /* main.m */,
+				92947FDA1634AEB700BDE83E /* Lexicograph-Prefix.pch */,
+				92947FDE1634AEB700BDE83E /* Default.png */,
+				92947FE01634AEB700BDE83E /* Default@2x.png */,
+				92947FE21634AEB700BDE83E /* Default-568h@2x.png */,
+			);
+			name = Other;
+			path = Lexicograph;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92370C6F193E48D00062B4D9 /* Lexicograph-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92370C84193E48D00062B4D9 /* Build configuration list for PBXNativeTarget "Lexicograph-swift" */;
+			buildPhases = (
+				92370C6C193E48D00062B4D9 /* Sources */,
+				92370C6D193E48D00062B4D9 /* Frameworks */,
+				92370C6E193E48D00062B4D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lexicograph-swift";
+			productName = "Lexicograph-swift";
+			productReference = 92370C70193E48D00062B4D9 /* Lexicograph.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92370C7B193E48D00062B4D9 /* Lexicograph-swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92370C87193E48D00062B4D9 /* Build configuration list for PBXNativeTarget "Lexicograph-swiftTests" */;
+			buildPhases = (
+				92370C78193E48D00062B4D9 /* Sources */,
+				92370C79193E48D00062B4D9 /* Frameworks */,
+				92370C7A193E48D00062B4D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92370C7E193E48D00062B4D9 /* PBXTargetDependency */,
+			);
+			name = "Lexicograph-swiftTests";
+			productName = "Lexicograph-swiftTests";
+			productReference = 92370C7C193E48D00062B4D9 /* Lexicograph-swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92947FC71634AEB700BDE83E /* Lexicograph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92947FE61634AEB700BDE83E /* Build configuration list for PBXNativeTarget "Lexicograph" */;
+			buildPhases = (
+				92947FC41634AEB700BDE83E /* Sources */,
+				92947FC51634AEB700BDE83E /* Frameworks */,
+				92947FC61634AEB700BDE83E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lexicograph;
+			productName = Lexicograph;
+			productReference = 92947FC81634AEB700BDE83E /* Lexicograph.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92947FBF1634AEB700BDE83E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				TargetAttributes = {
+					92370C6F193E48D00062B4D9 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					92370C7B193E48D00062B4D9 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 92370C6F193E48D00062B4D9;
+					};
+					92947FC71634AEB700BDE83E = {
+						DevelopmentTeam = 37EUQ42C7J;
+					};
+				};
+			};
+			buildConfigurationList = 92947FC21634AEB700BDE83E /* Build configuration list for PBXProject "Lexicograph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92947FBD1634AEB700BDE83E;
+			productRefGroup = 92947FC91634AEB700BDE83E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92947FC71634AEB700BDE83E /* Lexicograph */,
+				92370C6F193E48D00062B4D9 /* Lexicograph-swift */,
+				92370C7B193E48D00062B4D9 /* Lexicograph-swiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92370C6E193E48D00062B4D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92370C77193E48D00062B4D9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92370C7A193E48D00062B4D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92947FC61634AEB700BDE83E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92947FD71634AEB700BDE83E /* InfoPlist.strings in Resources */,
+				92947FDF1634AEB700BDE83E /* Default.png in Resources */,
+				92947FE11634AEB700BDE83E /* Default@2x.png in Resources */,
+				92947FE31634AEB700BDE83E /* Default-568h@2x.png in Resources */,
+				92947FED16350FDD00BDE83E /* Base.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92370C6C193E48D00062B4D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92370C8B193E49B70062B4D9 /* ViewController.swift in Sources */,
+				92370C75193E48D00062B4D9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92370C78193E48D00062B4D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92947FC41634AEB700BDE83E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92947FD91634AEB700BDE83E /* main.m in Sources */,
+				92947FDD1634AEB700BDE83E /* LXLexicographApplication.m in Sources */,
+				92947FEB1634AF6A00BDE83E /* LXViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92370C7E193E48D00062B4D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92370C6F193E48D00062B4D9 /* Lexicograph-swift */;
+			targetProxy = 92370C7D193E48D00062B4D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92947FD51634AEB700BDE83E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92947FD61634AEB700BDE83E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92370C85193E48D00062B4D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Lexicograph-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Lexicograph;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		92370C86193E48D00062B4D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Lexicograph-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Lexicograph;
+			};
+			name = Release;
+		};
+		92370C88193E48D00062B4D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Lexicograph-swift.app/Lexicograph-swift";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Lexicograph-swiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		92370C89193E48D00062B4D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Lexicograph-swift.app/Lexicograph-swift";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Lexicograph-swiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		92947FE41634AEB700BDE83E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92947FEC16350FDD00BDE83E /* Base.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LLVM_LTO = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Ofast";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92947FE51634AEB700BDE83E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92947FEC16350FDD00BDE83E /* Base.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LLVM_LTO = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Ofast";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92947FE71634AEB700BDE83E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92947FEC16350FDD00BDE83E /* Base.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Lexicograph/Lexicograph.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lexicograph/Lexicograph-Prefix.pch";
+				INFOPLIST_FILE = "Lexicograph/Lexicograph-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		92947FE81634AEB700BDE83E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92947FEC16350FDD00BDE83E /* Base.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Lexicograph/Lexicograph.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lexicograph/Lexicograph-Prefix.pch";
+				INFOPLIST_FILE = "Lexicograph/Lexicograph-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92370C84193E48D00062B4D9 /* Build configuration list for PBXNativeTarget "Lexicograph-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92370C85193E48D00062B4D9 /* Debug */,
+				92370C86193E48D00062B4D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92370C87193E48D00062B4D9 /* Build configuration list for PBXNativeTarget "Lexicograph-swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92370C88193E48D00062B4D9 /* Debug */,
+				92370C89193E48D00062B4D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92947FC21634AEB700BDE83E /* Build configuration list for PBXProject "Lexicograph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92947FE41634AEB700BDE83E /* Debug */,
+				92947FE51634AEB700BDE83E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92947FE61634AEB700BDE83E /* Build configuration list for PBXNativeTarget "Lexicograph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92947FE71634AEB700BDE83E /* Debug */,
+				92947FE81634AEB700BDE83E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92947FBF1634AEB700BDE83E /* Project object */;
+}

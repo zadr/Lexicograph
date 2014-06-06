@@ -1,0 +1,2 @@
+@interface LXViewController : UIViewController
+@end
