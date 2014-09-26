@@ -1,6 +1,6 @@
 Quick little dictionary app for iPhone's. Written in iOS and again in Swift.
 
 Uses:
-- Built-in dictionary to define words.
-- Built-in text support to suggest words as you type.
+- Built-in dictionary (UIReferenceLibraryViewController) to define words.
+- Built-in text support (UITextChecker) to suggest words as you type.
 
