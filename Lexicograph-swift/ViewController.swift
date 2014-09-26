@@ -2,20 +2,25 @@ import Foundation
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
-	@lazy var wordSearchBar = UISearchBar(frame: CGRectMake(0.0, CGRectGetMaxY(UIApplication.sharedApplication().statusBarFrame), 0.0, 44.0))
-	@lazy var suggestionsTableView = UITableView(frame: CGRectZero, style: .Plain)
+	lazy var wordSearchBar = UISearchBar(frame: CGRectMake(0.0, CGRectGetMaxY(UIApplication.sharedApplication().statusBarFrame), 0.0, 44.0))
+	lazy var suggestionsTableView = UITableView(frame: CGRectZero, style: .Plain)
 
-	let textChecker = UITextChecker()
+	lazy var textChecker = UITextChecker()
 
 	var referenceLibraryViewController: UIReferenceLibraryViewController?
 
 	var showingSuggestions: Bool = false
-	var words: String[]
-	var viewedWords: String[]
+	var words: [String] = []
+	var viewedWords: [String] = []
 
 	init(nibName nibNameOrNil: String!, nibBundle nibBundleOrNil: NSBundle!) {
-		words = String[]()
-		viewedWords = String[]()
+		words = [String]()
+
+		if let pastWords = NSUserDefaults.standardUserDefaults().objectForKey("LXPastWords") as? [String] {
+			words += pastWords
+		}
+
+		viewedWords = [String]()
 
 		super.init(nibName: nibName, bundle: nibBundle)
 
@@ -29,10 +34,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		wordSearchBar.tintColor = UIColor(red: (194.0 / 255.0), green: (197.0 / 255.0), blue: (200.0 / 255.0), alpha: 1.0)
 	}
 
-	deinit {
-		for notificationName in [UIKeyboardWillShowNotification, UIKeyboardWillHideNotification] {
-			NSNotificationCenter.defaultCenter().removeObserver(self, name: notificationName, object: nil)
-		}
+	required init(coder aDecoder: NSCoder) {
+		fatalError("use init(nibName:nibBundle:")
 	}
 
 	override func preferredStatusBarStyle() -> UIStatusBarStyle  {
@@ -47,12 +50,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-
-		navigationController.navigationBar.barTintColor = UIColor(red: (220.0 / 255.0), green: (223.0 / 255.0), blue: (226.0 / 255.0), alpha:1.0)
+		navigationController!.navigationBar.barTintColor = UIColor(red: (220.0 / 255.0), green: (223.0 / 255.0), blue: (226.0 / 255.0), alpha:1.0)
 		navigationItem.titleView = wordSearchBar
-		navigationItem.titleView.autoresizingMask = .FlexibleWidth
+		navigationItem.titleView!.autoresizingMask = .FlexibleWidth
 
 		suggestionsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		suggestionsTableView.tableFooterView = UIView(frame: CGRectZero)
@@ -63,7 +63,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 
-		suggestionsTableView.deselectRowAtIndexPath(suggestionsTableView.indexPathForSelectedRow(), animated: false)
+		if let selectedRow = suggestionsTableView.indexPathForSelectedRow() {
+			suggestionsTableView.deselectRowAtIndexPath(selectedRow, animated: false)
+		}
 		wordSearchBar.becomeFirstResponder()
 	}
 
@@ -75,14 +77,14 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		showingSuggestions = !searchBar.text.isEmpty
 
 		if showingSuggestions {
-			var availableLanguages = UITextChecker.availableLanguages() as String[]
-			words = textChecker.completionsForPartialWordRange(NSMakeRange(0, searchBar.text.utf16count), inString: searchBar.text, language: availableLanguages[0]) as String[]
+			var availableLanguages = UITextChecker.availableLanguages() as [String]
+			words = textChecker.completionsForPartialWordRange(NSMakeRange(0, searchBar.text.utf16Count), inString: searchBar.text, language: availableLanguages[0]) as [String]
 			words = words.filter {
 				return !($0.hasSuffix("'") || $0.hasSuffix("'s")  || $0.hasSuffix("."))
 			}
 			wordSearchBar.tintColor = UIColor(red: 0.0, green: (118.0 / 255.0), blue: 1.0, alpha: 1.0)
 		} else {
-			words = viewedWords.copy()
+			words = viewedWords
 			wordSearchBar.tintColor = UIColor(red: (194.0 / 255.0), green: (197.0 / 255.0), blue: (200.0 / 255.0), alpha: 1.0)
 		}
 
@@ -94,23 +96,23 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		self.tableView(suggestionsTableView, didSelectRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
 	}
 
-	func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return words.count
 	}
 
-	func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-		cell.textLabel.text = words[indexPath.row]
+		cell.textLabel!.text = words[indexPath.row]
 
 		return cell
 	}
 
-	func tableView(tableView: UITableView!, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath! {
+	func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
 		referenceLibraryViewController = UIReferenceLibraryViewController(term: words[indexPath.row])
 		return indexPath
 	}
 
-	func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		var term = words[indexPath.row];
 
 		viewedWords = viewedWords.filter {
@@ -123,26 +125,21 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		}
 
 		self.presentViewController(referenceLibraryViewController!, animated: true, completion: nil)
+
+		NSUserDefaults.standardUserDefaults().setObject(viewedWords as AnyObject!, forKey: "LXPastWords")
 	}
 
-	func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+	func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 		return !showingSuggestions
 	}
 
-	func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		words.removeAtIndex(indexPath.row)
 
 		tableView.beginUpdates()
 		tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 		tableView.endUpdates()
-	}
 
-	func keyboardWillShow(notification: NSNotification) {
-		var keyboardFrame = notification.userInfo[UIKeyboardFrameEndUserInfoKey].CGRectValue()
-		suggestionsTableView.contentInset = UIEdgeInsetsMake(64.0, 0.0, keyboardFrame.size.height, 0.0)
-	}
-
-	func keyboardWillHide(notification: NSNotification) {
-		suggestionsTableView.contentInset = UIEdgeInsetsMake(64.0, 0.0, 0.0, 0.0)
+		NSUserDefaults.standardUserDefaults().setObject(words as AnyObject!, forKey: "LXPastWords")
 	}
 }
